@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>웹소켓 테스트</title>
+
+    <style>
+        .messageBox::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chatBox">
+        <div class="body">
+
+        </div>
+        <div class="writingMessageBox">
+            <div class="messageBox"
+                 style="
+                    /*overflow: auto;*/
+                    overflow-y: scroll;
+                    width: 200px;
+                    height: 150px;
+                    font-size: 12px;
+                    -ms-overflow-style: none; /*IE, Edge*/
+                    ::-webkit-scrollbar {
+                        display: none; /*Chrome, Safari, Opera*/
+                        width: 0px;
+                    }
+                "
+            >
+
+            </div>
+            <label>
+                메시지 입력 :
+                <textarea class="chat-message" placeholder="메시지를 입력해주세요"></textarea>
+            </label>
+        </div>
+        <div class="footer">
+            <input class="user-id" />
+            <button class="connectionBtn">소켓연결</button>
+            <button class="sendBtn">전송</button>
+        </div>
+    </div>
+
+
+    <script src="/websocket/websocket-test.js"></script>
+
+</body>
+</html>
