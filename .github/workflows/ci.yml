@@ -27,7 +27,7 @@ jobs:
 
       # gradle 파일에 실행권한을 부여한다.
       - name: Grant execute permission for gradlew
-        uses: chmod +x gradlew
+        run: chmod +x gradlew
 
       # 프로젝트를 빌드한다.
       - name: Build with Gradle
