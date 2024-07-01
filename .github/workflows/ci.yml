@@ -36,3 +36,14 @@ jobs:
       # 프로젝트를 테스트한다.
       - name: Run tests
         run: ./gradlew test
+
+      ## github page에 배포
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          ACCESS_TOKEN: ${{secrets.WEBSOCKET_PR_ACCESS_TOKEN}}
+          BRANCH: gh-pages
+          FOLDER: build
+
+
+
