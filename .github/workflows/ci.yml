@@ -5,7 +5,7 @@ on:
 #    branch: [master]
     branch: [a]
   pull_request:
-    branch: [master]
+#    branch: [master]
 
 jobs:
   build:
