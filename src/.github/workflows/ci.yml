@@ -1,0 +1,38 @@
+name: Java CI with Gradle
+
+on:
+  push:
+    branch: [master]
+  pull_request:
+    branch: [master]
+
+jobs:
+  build:
+
+    # 우분투 환경에서 실행
+    runs-on: ubuntu-latest
+
+    steps:
+      # 코드 체크아웃 한다.
+      - name: Checkout code
+        uses: actions/cechkout@v2
+
+      # JDK를 설치한다.
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+#          distribution: 'adopt'
+          distribution: 'temurin'
+
+      # gradle 파일에 실행권한을 부여한다.
+      - name: Grant execute permission for gradlew
+        uses: chmod +x gradlew
+
+      # 프로젝트를 빌드한다.
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      # 프로젝트를 테스트한다.
+      - name: Run tests
+        run: ./gradlew test
