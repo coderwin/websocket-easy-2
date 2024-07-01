@@ -15,7 +15,7 @@ jobs:
     steps:
       # 코드 체크아웃 한다.
       - name: Checkout code
-        uses: actions/cechkout@v2
+        uses: actions/checkout@v2
 
       # JDK를 설치한다.
       - name: Set up JDK 17
